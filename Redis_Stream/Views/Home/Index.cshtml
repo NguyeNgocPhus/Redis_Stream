@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button onclick="myFunction()">Click me</button>
+    <button onclick="myFunction12()">Click me 1</button>
+    <button onclick="myFunction2()">Fetch data group</button>
+    <button onclick="myFunction1()">Fetch data</button>
+    <button onclick="myFunction3()">Fetch pending</button>
+    <button onclick="myFunction4()">Do something</button>
+
+</div>
+
+<script type="text/javascript">
+    function myFunction(){
+        fetch("/Home/Hello")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+    function myFunction12() {
+        fetch("/Home/Hi")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+    function myFunction2() {
+        fetch("/Home/GetStreamDataGroup")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+
+    function myFunction1() {
+        fetch("/Home/GetStreamData")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+    function myFunction3() {
+        fetch("/Home/GetDataPending")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+    function myFunction4() {
+        fetch("/Home/DoSomething")
+            .then(x => x.json())
+            .then(y => {
+                console.log(y);
+            });
+    }
+</script>
